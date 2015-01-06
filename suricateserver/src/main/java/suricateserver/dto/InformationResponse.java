@@ -5,8 +5,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * POJO for Get Information response
  * 
- * @author Etienne
- *
  */
 @XmlRootElement
 public class InformationResponse {

@@ -1,10 +1,13 @@
 package suricateserver.ws;
 
+import java.sql.SQLException;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import suricateserver.dao.InformationDAO;
 import suricateserver.dto.InformationResponse;
 
 /**
@@ -16,15 +19,20 @@ import suricateserver.dto.InformationResponse;
 @Path("information")
 public class Information {
 	/**
-	 * Method handling HTTP GET requests. The returned object will be sent to
-	 * the client as "text/plain" media type.
-	 *
-	 * @return String that will be returned as a text/plain response.
+	 * Get version of the server
+	 * 
+	 * @return version
 	 */
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String ping() {
-		return "Hello the server is working!";
+		try {
+			String version = InformationDAO.getInformation().getContent();
+			return "Meerkat Server is running in version " + version;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return "an internal error occured";
+		}
 	}
 
 	/**
