@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_form"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/fond_mobile"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <!-- Login progress -->
+    <LinearLayout
+        android:id="@+id/login_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/login_status_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="#7FBDC5"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/error_login_progress_signing_in"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/identifiant"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#FFFFFF"
+            android:hint="@string/id"
+            android:inputType="text"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/motdepasse"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/identifiant"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
+            android:hint="@string/mdp"
+            android:inputType="text"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/connecter"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/identifiant"
+            android:layout_below="@+id/motdepasse"
+            android:layout_marginTop="40dp"
+            android:background="#e74c3c"
+            android:text="@string/bouton_connecter"
+            android:textColor="#FFFFFF" /> 
+    </RelativeLayout>
+
+</RelativeLayout>

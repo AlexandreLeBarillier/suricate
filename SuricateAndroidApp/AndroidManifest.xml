@@ -6,21 +6,44 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:screenOrientation="portrait"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.suricate.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.suricate.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suricate.InscriptionActivity"
+            android:label="@string/title_activity_inscription" >
+        </activity>
+        <activity
+            android:name="com.suricate.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.suricate.ValidEnterActivity"
+            android:label="@string/title_activity_valid_enter" >
+        </activity>
+        <activity
+            android:name="com.suricate.BadgesListFragment"
+            android:label="@string/title_activity_badges_list_fragment" >
+        </activity>
+        <activity
+            android:name="com.suricate.HistoryFragment"
+            android:label="@string/title_activity_history_fragment" >
         </activity>
     </application>
 

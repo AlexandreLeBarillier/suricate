@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SuricateAndroidApp</string>
+    <string name="app_name">Suricate Secure®</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="id">Identifiant</string>
+    <string name="logo">Logo Meerkat Secure</string>
+    <string name="doorImage">Qui est à la porte ?</string>
+    <string name="sonne_a_la_porte">Voulez-vous laisser entrer cette personne ?</string>
+
+    <!-- ACTIVITY NAMES -->
+    <string name="title_activity_inscription">Inscription Activity</string>
+    <string name="title_activity_valid_enter">Demande d\'autorisation</string>
+    <string name="title_activity_badges">Mes badges</string>
+    <string name="title_activity_history">Historique</string>
+    
+    <!-- BUTTONS -->
+    <string name="bouton_connecter">Se connecter</string>
+    <string name="bouton_inscription">Pas de compte ? M\'inscrire</string>
+    <string name="bouton_autoriser">Autoriser</string>
+    <string name="bouton_refuser">Refuser</string>
+    <string name="drawer_open">Menu gauche déplié</string>
+    <string name="drawer_close">Menu gauche replié</string>
+
+    <!-- ERRORS MESSAGES -->
+    <string name="error_field_required">Ce champ est obligatoire</string>
+    <string name="error_invalid_password">Mot de passe trop court</string>
+    <string name="error_incorrect_password">Mot de passe incorrect</string>
+    <string name="error_login_progress_signing_in">Connexion en cours</string>
+    <string name="title_activity_badges_list_fragment">BadgesListFragment</string>
+
+    <!-- LEFT MENU -->
+    <string-array name="menu_array">
+        <item>Mes badges</item>
+        <item>Historique</item>
+        <item>Paramètres</item>
+        <item>Déconnexion</item>
+        <item>A propos</item>
+    </string-array>
+
+    <string name="title_activity_history_fragment">HistoryFragment</string>
 
 </resources>
