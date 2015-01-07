@@ -1,4 +1,10 @@
-package com.suricate;
+package com.suricate.activities;
+
+import com.suricate.R;
+import com.suricate.R.id;
+import com.suricate.R.layout;
+import com.suricate.R.menu;
+import com.suricate.R.string;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -128,23 +134,24 @@ public class LoginActivity extends Activity {
 		boolean cancel = false;
 		View focusView = null;
 
-		// Check for a valid password.
-		if (TextUtils.isEmpty(mPassword)) {
-			mPasswordView.setError(getString(R.string.error_field_required));
-			focusView = mPasswordView;
-			cancel = true;
-		} else if (mPassword.length() < 4) {
-			mPasswordView.setError(getString(R.string.error_invalid_password));
-			focusView = mPasswordView;
-			cancel = true;
-		}
-
-		// Check for a valid email address.
-		if (TextUtils.isEmpty(mEmail)) {
-			mEmailView.setError(getString(R.string.error_field_required));
-			focusView = mEmailView;
-			cancel = true;
-		}
+		/*TODO Décommenter*/
+//		// Check for a valid password.
+//		if (TextUtils.isEmpty(mPassword)) {
+//			mPasswordView.setError(getString(R.string.error_field_required));
+//			focusView = mPasswordView;
+//			cancel = true;
+//		} else if (mPassword.length() < 4) {
+//			mPasswordView.setError(getString(R.string.error_invalid_password));
+//			focusView = mPasswordView;
+//			cancel = true;
+//		}
+//
+//		// Check for a valid email address.
+//		if (TextUtils.isEmpty(mEmail)) {
+//			mEmailView.setError(getString(R.string.error_field_required));
+//			focusView = mEmailView;
+//			cancel = true;
+//		}
 
 		if (cancel) {
 			// There was an error; don't attempt login and focus the first

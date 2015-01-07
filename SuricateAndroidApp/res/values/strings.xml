@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Suricate Secure®</string>
+    <string name="app_name">Meerkat Secure®</string>
     <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
     <string name="mdp">Mot de passe</string>
     <string name="id">Identifiant</string>
     <string name="logo">Logo Meerkat Secure</string>
     <string name="doorImage">Qui est à la porte ?</string>
     <string name="sonne_a_la_porte">Voulez-vous laisser entrer cette personne ?</string>
+    <string name="radio_nfc">Badge NFC</string>
+    <string name="radio_digicode">Digicode</string>
+    <string name="type_acces">Type de l\'accès</string>
+    <string name="radio_permanent">Permanent</string>
+    <string name="radio_temporary">Temporaire</string>
+    <string name="permanent_acces">Durée de validité</string>
 
     <!-- ACTIVITY NAMES -->
     <string name="title_activity_inscription">Inscription Activity</string>
     <string name="title_activity_valid_enter">Demande d\'autorisation</string>
-    <string name="title_activity_badges">Mes badges</string>
+    <string name="title_activity_badges">Accès</string>
     <string name="title_activity_history">Historique</string>
-    
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="title_activity_about">A propos</string>
+    <string name="title_activity_add_badge">Ajouter un accès</string>
+
     <!-- BUTTONS -->
+    <string name="action_add">Ajouter</string>
+    <string name="bouton_ajouter">Ajouter</string>
+    <string name="bouton_valider">Valider</string>
     <string name="bouton_connecter">Se connecter</string>
     <string name="bouton_inscription">Pas de compte ? M\'inscrire</string>
     <string name="bouton_autoriser">Autoriser</string>
@@ -33,7 +44,7 @@
 
     <!-- LEFT MENU -->
     <string-array name="menu_array">
-        <item>Mes badges</item>
+        <item>Accès</item>
         <item>Historique</item>
         <item>Paramètres</item>
         <item>Déconnexion</item>
@@ -41,5 +52,10 @@
     </string-array>
 
     <string name="title_activity_history_fragment">HistoryFragment</string>
+    <string name="title_activity_about_fragment">AboutFragment</string>
+    <string name="title_activity_settings_fragment">SettingsFragment</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_copy_badge">CopyBadgeActivity</string>
+    <string name="title_activity_show_badge">ShowBadgeActivity</string>
 
 </resources>

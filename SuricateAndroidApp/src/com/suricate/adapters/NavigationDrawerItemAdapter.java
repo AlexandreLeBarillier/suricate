@@ -32,7 +32,8 @@ public class NavigationDrawerItemAdapter extends ArrayAdapter<String> {
 		if (convertView == null) {
 			viewHolder = new NDItem();
 			LayoutInflater inflater = LayoutInflater.from(getContext());
-			convertView = inflater.inflate(R.layout.adapter_navigation_drawer_item, null);
+			convertView = inflater.inflate(
+					R.layout.adapter_navigation_drawer_item, null);
 			viewHolder.icon = (ImageView) convertView.findViewById(R.id.icon);
 			viewHolder.label = (TextView) convertView.findViewById(R.id.label);
 			convertView.setTag(viewHolder);
@@ -42,9 +43,9 @@ public class NavigationDrawerItemAdapter extends ArrayAdapter<String> {
 		// Populate the data into the template view using the data object
 
 		int iconValue = R.drawable.ic_action_view_as_grid;
-		
-		if (label.equals("Mes Badges")) {
-			iconValue = R.drawable.ic_action_view_as_grid;
+
+		if (label.equals("Accès")) {
+			iconValue = R.drawable.ic_action_secure;
 		}
 		if (label.equals("Historique")) {
 			iconValue = R.drawable.ic_action_rewind;
@@ -53,7 +54,7 @@ public class NavigationDrawerItemAdapter extends ArrayAdapter<String> {
 			iconValue = R.drawable.ic_action_settings;
 		}
 		if (label.equals("Déconnexion")) {
-			iconValue = R.drawable.ic_action_view_as_grid;
+			iconValue = R.drawable.ic_disconnect;
 		}
 		if (label.equals("A propos")) {
 			iconValue = R.drawable.ic_action_about;

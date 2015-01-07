@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".AddBadgeActivity" >
+
+    <TextView
+        android:id="@+id/type_acces"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/type_acces"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/group_type_acces"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/type_acces"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_digicode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/radio_digicode" />
+
+        <RadioButton
+            android:id="@+id/radio_nfc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/radio_nfc" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/permanent_acces"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_type_acces"
+        android:text="@string/permanent_acces"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/radioGroup1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/permanent_acces"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_permanent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/radio_permanent" />
+
+        <RadioButton
+            android:id="@+id/radio_temporary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/radio_temporary" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/ajouter_acces"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_alignParentBottom="true"
+        android:background="#2ecc71"
+        android:textColor="#FFFFFF"
+        android:text="@string/bouton_ajouter" />
+
+</RelativeLayout>

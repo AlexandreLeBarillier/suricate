@@ -1,4 +1,4 @@
-package com.suricate;
+package com.suricate.activities;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,6 +6,7 @@ import java.util.Arrays;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -18,9 +19,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.suricate.R;
 import com.suricate.adapters.NavigationDrawerItemAdapter;
+import com.suricate.fragments.AboutFragment;
 import com.suricate.fragments.BadgesListFragment;
 import com.suricate.fragments.HistoryFragment;
+import com.suricate.fragments.SettingsFragment;
 
 /**
  * This example illustrates a common usage of the DrawerLayout widget in the
@@ -63,6 +67,9 @@ public class MainActivity extends Activity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private ArrayList<String> mMenuTitles;
+	
+	private Class<?> addClass;
+	private int menuToInflate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +77,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		mTitle = mDrawerTitle = getTitle();
-		mMenuTitles = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.menu_array)));
+		mMenuTitles = new ArrayList<String>(Arrays.asList(getResources()
+				.getStringArray(R.array.menu_array)));
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -120,7 +128,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.activity_main, menu);
+		inflater.inflate(menuToInflate, menu);
 
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -134,11 +142,11 @@ public class MainActivity extends Activity {
 		}
 		// Handle action buttons
 		switch (item.getItemId()) {
-		//
-		// case R.id.action_new:
-		// Intent i = new Intent(getApplicationContext(), AddActivity.class);
-		// startActivity(i);
-		// return true;
+
+		case R.id.action_add:
+			Intent i = new Intent(getApplicationContext(), addClass);
+			startActivity(i);
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -155,28 +163,28 @@ public class MainActivity extends Activity {
 	}
 
 	private void selectItem(int position) {
+		menuToInflate = R.menu.activity_main;
 		Fragment fragment = new BadgesListFragment();
 		// update the main content by replacing fragments
 		switch (position) {
 		case 0:
 			fragment = new BadgesListFragment();
+			addClass = AddBadgeActivity.class;
+			menuToInflate = R.menu.fragment_badges_list;
 			break;
 		case 1:
 			fragment = new HistoryFragment();
 			break;
-//		case 2:
-//			fragment = new ScoresFragment();
-//			break;
-//		case 3:
-//			fragment = new SettingsFragment();
-//			break;
-//		case 4:
-//			Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-//			startActivity(i);
-//			break;
-//		case 5:
-//			fragment = new AboutFragment();
-//			break;
+		case 2:
+			fragment = new SettingsFragment();
+			break;
+		case 3:
+			Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+			startActivity(i);
+			break;
+		case 4:
+			fragment = new AboutFragment();
+			break;
 		default:
 			break;
 		}

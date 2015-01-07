@@ -1,4 +1,8 @@
-package com.suricate;
+package com.suricate.activities;
+
+import com.suricate.R;
+import com.suricate.R.layout;
+import com.suricate.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
