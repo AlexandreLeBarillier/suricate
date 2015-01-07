@@ -16,7 +16,6 @@ public class Photo {
 	@Path("/verifyphoto")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response verifyphoto(PhotoRequest request) {
- 
 		try {
 			String path = PhotoService.savePhoto(request);
 			PhotoService.performMatching(path);
