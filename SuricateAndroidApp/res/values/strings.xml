@@ -23,6 +23,7 @@
     <string name="title_activity_settings">Paramètres</string>
     <string name="title_activity_about">A propos</string>
     <string name="title_activity_add_badge">Ajouter un accès</string>
+    <string name="title_activity_show_badge">Emulation badge</string>
 
     <!-- BUTTONS -->
     <string name="action_add">Ajouter</string>
@@ -56,6 +57,9 @@
     <string name="title_activity_settings_fragment">SettingsFragment</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_copy_badge">CopyBadgeActivity</string>
-    <string name="title_activity_show_badge">ShowBadgeActivity</string>
 
+    <!-- SHOW BADGE -->
+    <string name="card_title">Suricate Badge</string>
+    <string name="service_name">Suricate Service</string>
+    <string name="show_badge">Veuillez approcher votre badge de la serrure</string>
 </resources>
