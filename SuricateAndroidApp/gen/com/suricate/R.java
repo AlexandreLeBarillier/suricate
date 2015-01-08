@@ -34,7 +34,7 @@ public final class R {
         public static final int nfc=0x7f02000f;
     }
     public static final class id {
-        public static final int action_add=0x7f090023;
+        public static final int action_add=0x7f090022;
         public static final int ajouter_acces=0x7f09000c;
         public static final int badge_color=0x7f09001a;
         public static final int badge_last_usage=0x7f09001c;
@@ -57,7 +57,6 @@ public final class R {
         public static final int login_form=0x7f09000f;
         public static final int login_status=0x7f090010;
         public static final int login_status_message=0x7f090011;
-        public static final int menu_settings=0x7f090022;
         public static final int motdepasse=0x7f090013;
         public static final int owner_acces=0x7f090000;
         public static final int permanent_acces=0x7f090006;
