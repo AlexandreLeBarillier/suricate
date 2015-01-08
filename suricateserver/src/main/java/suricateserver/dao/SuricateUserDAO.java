@@ -26,19 +26,23 @@ public class SuricateUserDAO {
 		
 		try {
 
+			String dbClass = "com.mysql.jdbc.Driver";
+			Class.forName(dbClass);
 			connexion = DriverManager.getConnection(DAOUtils.DB_URL, DAOUtils.DB_USER,
 					DAOUtils.DB_PWD);
 
-			String query = "INSERT INTO Player (firstname, lastname, email, password) VALUES (?, ?, ?, ?)";
+			String query = "INSERT INTO suricateuser (firstname, lastname, email, password) VALUES (?, ?, ?, ?)";
 			
 			PreparedStatement preparedStatement = connexion.prepareStatement(query);
-			preparedStatement.setString(0, firstname);
-			preparedStatement.setString(1, lastname);
-			preparedStatement.setString(2, email);
-			preparedStatement.setBytes(3, password);
+			preparedStatement.setString(1, firstname);
+			preparedStatement.setString(2, lastname);
+			preparedStatement.setString(3, email);
+			preparedStatement.setBytes(4, password);
 			
 			int statut = preparedStatement.executeUpdate();
 
+			preparedStatement.close();
+			
 			if (statut == 0) {
 				throw new Exception("Insertion impossible");
 			}

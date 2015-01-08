@@ -3,12 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShowBadgeActivity" >
-
-    <TextView
+    <ImageView
+        android:id="@+id/imageShowBadge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:layout_marginTop="75dp"
+        android:src="@drawable/door_lock" />
+
+    <TextView
+        android:id="@+id/textShowBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageShowBadge"
+        android:layout_centerHorizontal="true"
+        android:text="@string/show_badge" />
 
 </RelativeLayout>
