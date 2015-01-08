@@ -34,30 +34,31 @@ public final class R {
         public static final int nfc=0x7f02000f;
     }
     public static final class id {
-        public static final int action_add=0x7f090021;
+        public static final int action_add=0x7f090023;
         public static final int ajouter_acces=0x7f09000c;
-        public static final int badge_color=0x7f090018;
-        public static final int badge_last_usage=0x7f09001a;
-        public static final int badge_name=0x7f090019;
-        public static final int badges_listview=0x7f09001d;
-        public static final int connecter=0x7f090012;
-        public static final int content_frame=0x7f090014;
-        public static final int digicodes_listview=0x7f09001e;
-        public static final int drawer_layout=0x7f090013;
+        public static final int badge_color=0x7f09001a;
+        public static final int badge_last_usage=0x7f09001c;
+        public static final int badge_name=0x7f09001b;
+        public static final int badges_listview=0x7f09001f;
+        public static final int connecter=0x7f090014;
+        public static final int content_frame=0x7f090016;
+        public static final int digicodes_listview=0x7f090020;
+        public static final int drawer_layout=0x7f090015;
         public static final int edit_owner=0x7f090001;
         public static final int edit_pin=0x7f09000b;
         public static final int group_type_acces=0x7f090003;
-        public static final int history_listview=0x7f09001f;
-        public static final int icon=0x7f09001b;
-        public static final int identifiant=0x7f090010;
-        public static final int imageShowBadge=0x7f090016;
-        public static final int label=0x7f09001c;
-        public static final int left_drawer=0x7f090015;
-        public static final int login_form=0x7f09000d;
-        public static final int login_status=0x7f09000e;
-        public static final int login_status_message=0x7f09000f;
-        public static final int menu_settings=0x7f090020;
-        public static final int motdepasse=0x7f090011;
+        public static final int history_listview=0x7f090021;
+        public static final int icon=0x7f09001d;
+        public static final int identifiant=0x7f090012;
+        public static final int imageShowBadge=0x7f090018;
+        public static final int imageView1=0x7f09000d;
+        public static final int label=0x7f09001e;
+        public static final int left_drawer=0x7f090017;
+        public static final int login_form=0x7f09000f;
+        public static final int login_status=0x7f090010;
+        public static final int login_status_message=0x7f090011;
+        public static final int menu_settings=0x7f090022;
+        public static final int motdepasse=0x7f090013;
         public static final int owner_acces=0x7f090000;
         public static final int permanent_acces=0x7f090006;
         public static final int pin_code=0x7f09000a;
@@ -66,8 +67,9 @@ public final class R {
         public static final int radio_nfc=0x7f090005;
         public static final int radio_permanent=0x7f090008;
         public static final int radio_temporary=0x7f090009;
-        public static final int textShowBadge=0x7f090017;
+        public static final int textShowBadge=0x7f090019;
         public static final int type_acces=0x7f090002;
+        public static final int writetag=0x7f09000e;
     }
     public static final class layout {
         public static final int activity_add_badge=0x7f030000;
@@ -102,31 +104,33 @@ public final class R {
     public static final class string {
         /**  BUTTONS 
          */
-        public static final int action_add=0x7f050018;
+        public static final int action_add=0x7f05001d;
         public static final int app_name=0x7f050000;
-        public static final int bouton_ajouter=0x7f050019;
-        public static final int bouton_autoriser=0x7f05001d;
-        public static final int bouton_connecter=0x7f05001b;
-        public static final int bouton_inscription=0x7f05001c;
-        public static final int bouton_refuser=0x7f05001e;
-        public static final int bouton_valider=0x7f05001a;
+        public static final int bouton_ajouter=0x7f05001e;
+        public static final int bouton_autoriser=0x7f050022;
+        public static final int bouton_connecter=0x7f050020;
+        public static final int bouton_inscription=0x7f050021;
+        public static final int bouton_refuser=0x7f050023;
+        public static final int bouton_valider=0x7f05001f;
         /**  SHOW BADGE 
          */
-        public static final int card_title=0x7f05002c;
+        public static final int card_title=0x7f050031;
+        public static final int device_not_nfc=0x7f050010;
         public static final int doorImage=0x7f050005;
-        public static final int drawer_close=0x7f050020;
-        public static final int drawer_open=0x7f05001f;
+        public static final int drawer_close=0x7f050025;
+        public static final int drawer_open=0x7f050024;
         /**  ERRORS MESSAGES 
          */
-        public static final int error_field_required=0x7f050021;
-        public static final int error_incorrect_password=0x7f050023;
-        public static final int error_invalid_password=0x7f050022;
-        public static final int error_login_progress_signing_in=0x7f050024;
+        public static final int error_field_required=0x7f050026;
+        public static final int error_incorrect_password=0x7f050028;
+        public static final int error_invalid_password=0x7f050027;
+        public static final int error_login_progress_signing_in=0x7f050029;
         public static final int hello_world=0x7f050001;
         public static final int id=0x7f050003;
         public static final int logo=0x7f050004;
         public static final int mdp=0x7f050002;
-        public static final int menu_settings=0x7f05002a;
+        public static final int menu_settings=0x7f05002f;
+        public static final int nfc_disabled=0x7f050011;
         public static final int owner_acces=0x7f05000d;
         public static final int permanent_acces=0x7f05000c;
         public static final int pin_code=0x7f05000e;
@@ -134,27 +138,30 @@ public final class R {
         public static final int radio_nfc=0x7f050007;
         public static final int radio_permanent=0x7f05000a;
         public static final int radio_temporary=0x7f05000b;
-        public static final int service_name=0x7f05002d;
-        public static final int show_badge=0x7f05002e;
+        public static final int service_name=0x7f050032;
+        public static final int show_badge=0x7f050033;
         public static final int sonne_a_la_porte=0x7f050006;
-        public static final int title_activity_about=0x7f050015;
-        public static final int title_activity_about_fragment=0x7f050028;
-        public static final int title_activity_add_badge=0x7f050016;
-        public static final int title_activity_badges=0x7f050011;
-        public static final int title_activity_badges_list_fragment=0x7f050025;
-        public static final int title_activity_copy_badge=0x7f05002b;
-        public static final int title_activity_digicodes=0x7f050012;
-        public static final int title_activity_digicodes_list_fragment=0x7f050026;
-        public static final int title_activity_history=0x7f050013;
-        public static final int title_activity_history_fragment=0x7f050027;
+        public static final int taptag_message=0x7f050012;
+        public static final int taptag_title=0x7f050013;
+        public static final int title_activity_about=0x7f05001a;
+        public static final int title_activity_about_fragment=0x7f05002d;
+        public static final int title_activity_add_badge=0x7f05001b;
+        public static final int title_activity_badges=0x7f050016;
+        public static final int title_activity_badges_list_fragment=0x7f05002a;
+        public static final int title_activity_copy_badge=0x7f050030;
+        public static final int title_activity_digicodes=0x7f050017;
+        public static final int title_activity_digicodes_list_fragment=0x7f05002b;
+        public static final int title_activity_history=0x7f050018;
+        public static final int title_activity_history_fragment=0x7f05002c;
         /**  ACTIVITY NAMES 
          */
-        public static final int title_activity_inscription=0x7f05000f;
-        public static final int title_activity_settings=0x7f050014;
-        public static final int title_activity_settings_fragment=0x7f050029;
-        public static final int title_activity_show_badge=0x7f050017;
-        public static final int title_activity_valid_enter=0x7f050010;
+        public static final int title_activity_inscription=0x7f050014;
+        public static final int title_activity_settings=0x7f050019;
+        public static final int title_activity_settings_fragment=0x7f05002e;
+        public static final int title_activity_show_badge=0x7f05001c;
+        public static final int title_activity_valid_enter=0x7f050015;
         public static final int type_acces=0x7f050009;
+        public static final int writetag=0x7f05000f;
     }
     public static final class style {
         /** 

@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -61,6 +62,8 @@ public class BadgesListFragment extends Fragment implements CallerServer {
 
 				Object o = badges_listview.getItemAtPosition(position);
 				Acces bdg = (Acces) o;// As you are using Default String
+
+				ApplicationValues.getInstance()._selectedBadge = bdg;
 										// Adapter
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						getActivity());

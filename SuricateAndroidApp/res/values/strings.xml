@@ -17,6 +17,12 @@
     <string name="owner_acces">Propriétaire</string>
     <string name="pin_code">Code PIN</string>
     
+    <string name="writetag">Créer badge</string>
+    <string name="device_not_nfc">This application or device does not support NFC.</string>
+    <string name="nfc_disabled">NFC is disabled.</string>
+    <string name="taptag_message">This action will\npersonalize the tag</string>
+    <string name="taptag_title">Please tap the tag</string>
+    
     <!-- ACTIVITY NAMES -->
     <string name="title_activity_inscription">Inscription Activity</string>
     <string name="title_activity_valid_enter">Demande d\'autorisation</string>

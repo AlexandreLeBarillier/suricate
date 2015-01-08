@@ -8,6 +8,7 @@ import com.suricate.pojo.Acces;
 public class ApplicationValues {
 
 	private static ApplicationValues _instance = new ApplicationValues();
+	public Acces _selectedBadge;
 
 	public static ApplicationValues getInstance() {
 		return _instance;

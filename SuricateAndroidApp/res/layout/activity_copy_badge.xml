@@ -1,14 +1,22 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CopyBadgeActivity" >
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/nfc" />
+
+    <Button
+        android:id="@+id/writetag"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:layout_gravity="end"
+        android:layout_marginTop="200dp"
+        android:onClick="onClick"
+        android:text="@string/writetag" />
 
-</RelativeLayout>
+</FrameLayout>
