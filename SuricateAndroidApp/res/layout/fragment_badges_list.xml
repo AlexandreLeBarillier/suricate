@@ -2,13 +2,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".BadgesListFragment" >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/badges"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:text="Badges" />
+
+    <ListView
+        android:id="@+id/badges_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/badges" />
+
+    <TextView
+        android:id="@+id/digicodes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/badges_listview"
+        android:text="Digicodes"
+        android:layout_marginTop="20dp" />
+
+    <ListView
+        android:id="@+id/digicodes_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/digicodes" />
 
 </RelativeLayout>
