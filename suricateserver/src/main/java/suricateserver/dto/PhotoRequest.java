@@ -6,6 +6,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class PhotoRequest {
 
 	private String photo;
+	
+	private String code;
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getPhoto() {
 		return photo;
