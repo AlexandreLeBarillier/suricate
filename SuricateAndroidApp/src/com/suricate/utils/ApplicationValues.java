@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.suricate.pojo.Acces;
-import com.suricate.ws.WSMethod;
 
 public class ApplicationValues {
 
@@ -16,10 +15,12 @@ public class ApplicationValues {
 
 	public List<Acces> listOfBadges;
 	public List<Acces> listOfDigicodes;
+	public List<Acces> listOfHistory;
 
 	private ApplicationValues() {
 		listOfBadges = new ArrayList<Acces>();
 		listOfDigicodes = new ArrayList<Acces>();
+		listOfHistory = new ArrayList<Acces>();
 	}
 
 }

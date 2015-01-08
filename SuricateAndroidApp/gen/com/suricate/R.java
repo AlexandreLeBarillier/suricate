@@ -34,7 +34,7 @@ public final class R {
         public static final int nfc=0x7f02000f;
     }
     public static final class id {
-        public static final int action_add=0x7f090020;
+        public static final int action_add=0x7f090021;
         public static final int ajouter_acces=0x7f09000c;
         public static final int badge_color=0x7f090018;
         public static final int badge_last_usage=0x7f09001a;
@@ -47,6 +47,7 @@ public final class R {
         public static final int edit_owner=0x7f090001;
         public static final int edit_pin=0x7f09000b;
         public static final int group_type_acces=0x7f090003;
+        public static final int history_listview=0x7f09001f;
         public static final int icon=0x7f09001b;
         public static final int identifiant=0x7f090010;
         public static final int imageShowBadge=0x7f090016;
@@ -55,7 +56,7 @@ public final class R {
         public static final int login_form=0x7f09000d;
         public static final int login_status=0x7f09000e;
         public static final int login_status_message=0x7f09000f;
-        public static final int menu_settings=0x7f09001f;
+        public static final int menu_settings=0x7f090020;
         public static final int motdepasse=0x7f090011;
         public static final int owner_acces=0x7f090000;
         public static final int permanent_acces=0x7f090006;
@@ -78,12 +79,13 @@ public final class R {
         public static final int activity_valid_enter=0x7f030006;
         public static final int adapter_item_badge=0x7f030007;
         public static final int adapter_item_digicode=0x7f030008;
-        public static final int adapter_navigation_drawer_item=0x7f030009;
-        public static final int fragment_about=0x7f03000a;
-        public static final int fragment_badges_list=0x7f03000b;
-        public static final int fragment_digicodes_list=0x7f03000c;
-        public static final int fragment_history=0x7f03000d;
-        public static final int fragment_settings=0x7f03000e;
+        public static final int adapter_item_history=0x7f030009;
+        public static final int adapter_navigation_drawer_item=0x7f03000a;
+        public static final int fragment_about=0x7f03000b;
+        public static final int fragment_badges_list=0x7f03000c;
+        public static final int fragment_digicodes_list=0x7f03000d;
+        public static final int fragment_history=0x7f03000e;
+        public static final int fragment_settings=0x7f03000f;
     }
     public static final class menu {
         public static final int activity_add_badge=0x7f080000;

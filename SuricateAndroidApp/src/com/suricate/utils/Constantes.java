@@ -16,4 +16,9 @@ public final class Constantes {
 	public static final String URL_LIST_DIGICODE = "pinaccess/getlist";
 	public static final String URL_ADD_DIGICODE = "pinaccess/createpinaccess";
 	
+	/*
+	 * URL HISTORY 
+	 */
+	public static final String URL_LIST_HISTORY = "accesslog";
+	
 }

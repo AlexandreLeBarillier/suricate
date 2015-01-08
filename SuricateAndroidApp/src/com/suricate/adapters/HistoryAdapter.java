@@ -1,5 +1,6 @@
 package com.suricate.adapters;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,21 +15,19 @@ import android.widget.TextView;
 import com.suricate.R;
 import com.suricate.pojo.Acces;
 
-public class DigicodeAdapter extends ArrayAdapter<Acces> {
+public class HistoryAdapter extends ArrayAdapter<Acces> {
 
 	private static class AccesView {
-		private View color;
 		private TextView name;
 		private TextView last_usage;
 	}
 
-	public DigicodeAdapter(Context context, List<Acces> badges) {
-		super(context, R.layout.adapter_item_badge, badges);
+	public HistoryAdapter(Context context, List<Acces> badges) {
+		super(context, R.layout.adapter_item_history, badges);
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		List<String> colors = Arrays.asList("#F62459", "#52B3D9", "#87D37C","#F7CA18");
 
 		// Get the data item for this position
 		Acces item = getItem(position);
@@ -38,21 +37,20 @@ public class DigicodeAdapter extends ArrayAdapter<Acces> {
 		if (convertView == null) {
 			viewAcces = new AccesView();
 			LayoutInflater inflater = LayoutInflater.from(getContext());
-			convertView = inflater.inflate(R.layout.adapter_item_badge, null);
+			convertView = inflater.inflate(R.layout.adapter_item_history, null);
 			viewAcces.name = (TextView) convertView
 					.findViewById(R.id.badge_name);
 			viewAcces.last_usage = (TextView) convertView
 					.findViewById(R.id.badge_last_usage);
-			viewAcces.color = (View) convertView.findViewById(R.id.badge_color);
 			convertView.setTag(viewAcces);
 		} else {
 			viewAcces = (AccesView) convertView.getTag();
 		}
+		
 		// Populate the data into the template view using the data object
-		viewAcces.name.setText("Digicode " + item.getCode() + " - " + item.getOwner());
-		viewAcces.last_usage.setText("Utilisé le : 07/01/2015 14:25");
-		viewAcces.color.setBackgroundColor(Color.parseColor(colors.get(position
-				% colors.size())));
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		viewAcces.name.setText(item.getOwner());
+		viewAcces.last_usage.setText("Utilisé le : "+sdf.format(item.getLastUsage()));
 
 		// Return the completed view to render on screen
 		return convertView;
