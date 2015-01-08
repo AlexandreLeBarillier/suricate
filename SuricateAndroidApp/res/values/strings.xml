@@ -20,7 +20,8 @@
     <!-- ACTIVITY NAMES -->
     <string name="title_activity_inscription">Inscription Activity</string>
     <string name="title_activity_valid_enter">Demande d\'autorisation</string>
-    <string name="title_activity_badges">Accès</string>
+    <string name="title_activity_badges">Badges</string>
+    <string name="title_activity_digicodes">Digicodes</string>
     <string name="title_activity_history">Historique</string>
     <string name="title_activity_settings">Paramètres</string>
     <string name="title_activity_about">A propos</string>
@@ -44,10 +45,12 @@
     <string name="error_incorrect_password">Mot de passe incorrect</string>
     <string name="error_login_progress_signing_in">Connexion en cours</string>
     <string name="title_activity_badges_list_fragment">BadgesListFragment</string>
-
+    <string name="title_activity_digicodes_list_fragment">DigicodesListFragment</string>
+    
     <!-- LEFT MENU -->
     <string-array name="menu_array">
-        <item>Accès</item>
+        <item>Badges</item>
+        <item>Digicodes</item>
         <item>Historique</item>
         <item>Paramètres</item>
         <item>Déconnexion</item>

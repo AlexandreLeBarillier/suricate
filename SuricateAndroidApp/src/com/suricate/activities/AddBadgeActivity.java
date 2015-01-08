@@ -51,18 +51,16 @@ public class AddBadgeActivity extends Activity {
 	}
 
 	private void addAcces() {
-
 		if (isNFC) {
 			Acces acces = new Acces(owner.getText().toString(), isNFC,
 					isPermanent, null,(ApplicationValues.getInstance().listOfBadges.size()+1)+":"+ UUID.randomUUID().toString()
 							.substring(0, 19));
-			String json = acces.toNFCString();
-			WSMethod.getInstance().addNFCAccess(json);
+			WSMethod.getInstance().addNFCAccess(acces);
 		} else {
 			Acces acces = new Acces(owner.getText().toString(), isNFC,isPermanent, null, pinCode.getText().toString());
-			String json = acces.toDigicodeString();
-			WSMethod.getInstance().addDigicode(json);
+			WSMethod.getInstance().addDigicode(acces);
 		}
+		
 		Intent i = new Intent(getApplicationContext(), MainActivity.class);
 		startActivity(i);
 	}

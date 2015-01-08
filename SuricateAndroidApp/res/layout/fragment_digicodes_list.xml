@@ -6,9 +6,8 @@
     tools:context=".BadgesListFragment" >
 
     <ListView
-        android:id="@+id/badges_listview"
+        android:id="@+id/digicodes_listview"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-
 
 </RelativeLayout>

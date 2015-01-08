@@ -44,8 +44,11 @@ public class NavigationDrawerItemAdapter extends ArrayAdapter<String> {
 
 		int iconValue = R.drawable.ic_action_view_as_grid;
 
-		if (label.equals("Accès")) {
+		if (label.equals("Badges")) {
 			iconValue = R.drawable.ic_action_secure;
+		}
+		if (label.equals("Digicodes")) {
+			iconValue = R.drawable.ic_action_view_as_grid;
 		}
 		if (label.equals("Historique")) {
 			iconValue = R.drawable.ic_action_rewind;

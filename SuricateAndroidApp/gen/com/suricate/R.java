@@ -11,59 +11,62 @@ public final class R {
     public static final class array {
         /**  LEFT MENU 
          */
-        public static final int menu_array=0x7f050000;
+        public static final int menu_array=0x7f060000;
     }
     public static final class attr {
     }
     public static final class drawable {
         public static final int chucknorris=0x7f020000;
-        public static final int drawer_shadow=0x7f020001;
-        public static final int fond_mobile=0x7f020002;
-        public static final int ic_action_about=0x7f020003;
-        public static final int ic_action_new=0x7f020004;
-        public static final int ic_action_rewind=0x7f020005;
-        public static final int ic_action_secure=0x7f020006;
-        public static final int ic_action_settings=0x7f020007;
-        public static final int ic_action_view_as_grid=0x7f020008;
-        public static final int ic_disconnect=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
-        public static final int ic_navigation_drawer=0x7f02000b;
-        public static final int logo=0x7f02000c;
+        public static final int door_lock=0x7f020001;
+        public static final int door_unlock=0x7f020002;
+        public static final int drawer_shadow=0x7f020003;
+        public static final int fond_mobile=0x7f020004;
+        public static final int ic_action_about=0x7f020005;
+        public static final int ic_action_new=0x7f020006;
+        public static final int ic_action_rewind=0x7f020007;
+        public static final int ic_action_secure=0x7f020008;
+        public static final int ic_action_settings=0x7f020009;
+        public static final int ic_action_view_as_grid=0x7f02000a;
+        public static final int ic_disconnect=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int ic_navigation_drawer=0x7f02000d;
+        public static final int logo=0x7f02000e;
+        public static final int nfc=0x7f02000f;
     }
     public static final class id {
-        public static final int action_add=0x7f080020;
-        public static final int ajouter_acces=0x7f08000c;
-        public static final int badge_color=0x7f080016;
-        public static final int badge_last_usage=0x7f080018;
-        public static final int badge_name=0x7f080017;
-        public static final int badges=0x7f08001b;
-        public static final int badges_listview=0x7f08001c;
-        public static final int connecter=0x7f080012;
-        public static final int content_frame=0x7f080014;
-        public static final int digicodes=0x7f08001d;
-        public static final int digicodes_listview=0x7f08001e;
-        public static final int drawer_layout=0x7f080013;
-        public static final int edit_owner=0x7f080001;
-        public static final int edit_pin=0x7f08000b;
-        public static final int group_type_acces=0x7f080003;
-        public static final int icon=0x7f080019;
-        public static final int identifiant=0x7f080010;
-        public static final int label=0x7f08001a;
-        public static final int left_drawer=0x7f080015;
-        public static final int login_form=0x7f08000d;
-        public static final int login_status=0x7f08000e;
-        public static final int login_status_message=0x7f08000f;
-        public static final int menu_settings=0x7f08001f;
-        public static final int motdepasse=0x7f080011;
-        public static final int owner_acces=0x7f080000;
-        public static final int permanent_acces=0x7f080006;
-        public static final int pin_code=0x7f08000a;
-        public static final int radioGroup1=0x7f080007;
-        public static final int radio_digicode=0x7f080004;
-        public static final int radio_nfc=0x7f080005;
-        public static final int radio_permanent=0x7f080008;
-        public static final int radio_temporary=0x7f080009;
-        public static final int type_acces=0x7f080002;
+        public static final int action_add=0x7f090020;
+        public static final int ajouter_acces=0x7f09000c;
+        public static final int badge_color=0x7f090018;
+        public static final int badge_last_usage=0x7f09001a;
+        public static final int badge_name=0x7f090019;
+        public static final int badges_listview=0x7f09001d;
+        public static final int connecter=0x7f090012;
+        public static final int content_frame=0x7f090014;
+        public static final int digicodes_listview=0x7f09001e;
+        public static final int drawer_layout=0x7f090013;
+        public static final int edit_owner=0x7f090001;
+        public static final int edit_pin=0x7f09000b;
+        public static final int group_type_acces=0x7f090003;
+        public static final int icon=0x7f09001b;
+        public static final int identifiant=0x7f090010;
+        public static final int imageShowBadge=0x7f090016;
+        public static final int label=0x7f09001c;
+        public static final int left_drawer=0x7f090015;
+        public static final int login_form=0x7f09000d;
+        public static final int login_status=0x7f09000e;
+        public static final int login_status_message=0x7f09000f;
+        public static final int menu_settings=0x7f09001f;
+        public static final int motdepasse=0x7f090011;
+        public static final int owner_acces=0x7f090000;
+        public static final int permanent_acces=0x7f090006;
+        public static final int pin_code=0x7f09000a;
+        public static final int radioGroup1=0x7f090007;
+        public static final int radio_digicode=0x7f090004;
+        public static final int radio_nfc=0x7f090005;
+        public static final int radio_permanent=0x7f090008;
+        public static final int radio_temporary=0x7f090009;
+        public static final int textShowBadge=0x7f090017;
+        public static final int type_acces=0x7f090002;
     }
     public static final class layout {
         public static final int activity_add_badge=0x7f030000;
@@ -78,70 +81,78 @@ public final class R {
         public static final int adapter_navigation_drawer_item=0x7f030009;
         public static final int fragment_about=0x7f03000a;
         public static final int fragment_badges_list=0x7f03000b;
-        public static final int fragment_history=0x7f03000c;
-        public static final int fragment_settings=0x7f03000d;
+        public static final int fragment_digicodes_list=0x7f03000c;
+        public static final int fragment_history=0x7f03000d;
+        public static final int fragment_settings=0x7f03000e;
     }
     public static final class menu {
-        public static final int activity_add_badge=0x7f070000;
-        public static final int activity_copy_badge=0x7f070001;
-        public static final int activity_inscription=0x7f070002;
-        public static final int activity_main=0x7f070003;
-        public static final int activity_show_badge=0x7f070004;
-        public static final int activity_valid_enter=0x7f070005;
-        public static final int fragment_about=0x7f070006;
-        public static final int fragment_badges_list=0x7f070007;
-        public static final int fragment_history=0x7f070008;
-        public static final int fragment_settings=0x7f070009;
+        public static final int activity_add_badge=0x7f080000;
+        public static final int activity_copy_badge=0x7f080001;
+        public static final int activity_inscription=0x7f080002;
+        public static final int activity_main=0x7f080003;
+        public static final int activity_show_badge=0x7f080004;
+        public static final int activity_valid_enter=0x7f080005;
+        public static final int fragment_about=0x7f080006;
+        public static final int fragment_badges_list=0x7f080007;
+        public static final int fragment_history=0x7f080008;
+        public static final int fragment_settings=0x7f080009;
     }
     public static final class string {
         /**  BUTTONS 
          */
-        public static final int action_add=0x7f040016;
-        public static final int app_name=0x7f040000;
-        public static final int bouton_ajouter=0x7f040017;
-        public static final int bouton_autoriser=0x7f04001b;
-        public static final int bouton_connecter=0x7f040019;
-        public static final int bouton_inscription=0x7f04001a;
-        public static final int bouton_refuser=0x7f04001c;
-        public static final int bouton_valider=0x7f040018;
-        public static final int doorImage=0x7f040005;
-        public static final int drawer_close=0x7f04001e;
-        public static final int drawer_open=0x7f04001d;
+        public static final int action_add=0x7f050018;
+        public static final int app_name=0x7f050000;
+        public static final int bouton_ajouter=0x7f050019;
+        public static final int bouton_autoriser=0x7f05001d;
+        public static final int bouton_connecter=0x7f05001b;
+        public static final int bouton_inscription=0x7f05001c;
+        public static final int bouton_refuser=0x7f05001e;
+        public static final int bouton_valider=0x7f05001a;
+        /**  SHOW BADGE 
+         */
+        public static final int card_title=0x7f05002c;
+        public static final int doorImage=0x7f050005;
+        public static final int drawer_close=0x7f050020;
+        public static final int drawer_open=0x7f05001f;
         /**  ERRORS MESSAGES 
          */
-        public static final int error_field_required=0x7f04001f;
-        public static final int error_incorrect_password=0x7f040021;
-        public static final int error_invalid_password=0x7f040020;
-        public static final int error_login_progress_signing_in=0x7f040022;
-        public static final int hello_world=0x7f040001;
-        public static final int id=0x7f040003;
-        public static final int logo=0x7f040004;
-        public static final int mdp=0x7f040002;
-        public static final int menu_settings=0x7f040027;
-        public static final int owner_acces=0x7f04000d;
-        public static final int permanent_acces=0x7f04000c;
-        public static final int pin_code=0x7f04000e;
-        public static final int radio_digicode=0x7f040008;
-        public static final int radio_nfc=0x7f040007;
-        public static final int radio_permanent=0x7f04000a;
-        public static final int radio_temporary=0x7f04000b;
-        public static final int sonne_a_la_porte=0x7f040006;
-        public static final int title_activity_about=0x7f040014;
-        public static final int title_activity_about_fragment=0x7f040025;
-        public static final int title_activity_add_badge=0x7f040015;
-        public static final int title_activity_badges=0x7f040011;
-        public static final int title_activity_badges_list_fragment=0x7f040023;
-        public static final int title_activity_copy_badge=0x7f040028;
-        public static final int title_activity_history=0x7f040012;
-        public static final int title_activity_history_fragment=0x7f040024;
+        public static final int error_field_required=0x7f050021;
+        public static final int error_incorrect_password=0x7f050023;
+        public static final int error_invalid_password=0x7f050022;
+        public static final int error_login_progress_signing_in=0x7f050024;
+        public static final int hello_world=0x7f050001;
+        public static final int id=0x7f050003;
+        public static final int logo=0x7f050004;
+        public static final int mdp=0x7f050002;
+        public static final int menu_settings=0x7f05002a;
+        public static final int owner_acces=0x7f05000d;
+        public static final int permanent_acces=0x7f05000c;
+        public static final int pin_code=0x7f05000e;
+        public static final int radio_digicode=0x7f050008;
+        public static final int radio_nfc=0x7f050007;
+        public static final int radio_permanent=0x7f05000a;
+        public static final int radio_temporary=0x7f05000b;
+        public static final int service_name=0x7f05002d;
+        public static final int show_badge=0x7f05002e;
+        public static final int sonne_a_la_porte=0x7f050006;
+        public static final int title_activity_about=0x7f050015;
+        public static final int title_activity_about_fragment=0x7f050028;
+        public static final int title_activity_add_badge=0x7f050016;
+        public static final int title_activity_badges=0x7f050011;
+        public static final int title_activity_badges_list_fragment=0x7f050025;
+        public static final int title_activity_copy_badge=0x7f05002b;
+        public static final int title_activity_digicodes=0x7f050012;
+        public static final int title_activity_digicodes_list_fragment=0x7f050026;
+        public static final int title_activity_history=0x7f050013;
+        public static final int title_activity_history_fragment=0x7f050027;
         /**  ACTIVITY NAMES 
          */
-        public static final int title_activity_inscription=0x7f04000f;
-        public static final int title_activity_settings=0x7f040013;
-        public static final int title_activity_settings_fragment=0x7f040026;
-        public static final int title_activity_show_badge=0x7f040029;
-        public static final int title_activity_valid_enter=0x7f040010;
-        public static final int type_acces=0x7f040009;
+        public static final int title_activity_inscription=0x7f05000f;
+        public static final int title_activity_settings=0x7f050014;
+        public static final int title_activity_settings_fragment=0x7f050029;
+        public static final int title_activity_show_badge=0x7f050017;
+        public static final int title_activity_valid_enter=0x7f050010;
+        public static final int type_acces=0x7f050009;
     }
     public static final class style {
         /** 
@@ -169,14 +180,17 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
  Application theme. 
          */
-        public static final int AppTheme=0x7f060001;
-        public static final int MyActionBar=0x7f060003;
-        public static final int MyTheme_ActionBar_TitleTextStyle=0x7f060004;
-        public static final int NoActionBar=0x7f060002;
+        public static final int AppTheme=0x7f070001;
+        public static final int MyActionBar=0x7f070003;
+        public static final int MyTheme_ActionBar_TitleTextStyle=0x7f070004;
+        public static final int NoActionBar=0x7f070002;
+    }
+    public static final class xml {
+        public static final int aid_list=0x7f040000;
     }
 }

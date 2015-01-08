@@ -1,7 +1,8 @@
 package com.suricate.utils;
 
 public final class Constantes {
-	public static final String WEBSERVICES_URL = "http://192.168.180.1:8080/suricateserver/rest/";
+//	public static final String WEBSERVICES_URL = "http://192.168.180.1:8080/suricateserver/rest/";
+	public static final String WEBSERVICES_URL = "http://serveur-apprentissage.ensicaen.fr:8080/suricateserver/rest/";
 	
 	/*
 	 * URL NFC BADGE

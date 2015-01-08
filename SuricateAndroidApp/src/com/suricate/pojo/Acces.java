@@ -61,7 +61,7 @@ public class Acces {
 	}
 	
 	public String toNFCString(){
-		return "{\"nfccode\":\" "
+		return "{\"nfccode\":\""
 				+ code
 				+ "\",\"validity\":\"" + (isPermanent ? 0 : 1) + "\","
 				+ "\"validity_rule\":\"00\","

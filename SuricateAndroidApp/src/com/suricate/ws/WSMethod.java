@@ -24,44 +24,26 @@ public class WSMethod implements CallerServer {
 		return _instance;
 	}
 
-	public static void updateNFCAccessList() {
-		URL_CALLED = Constantes.URL_LIST_NFC_BADGE;
-		ServerAsyncTask task = new ServerAsyncTask(_instance);
-		RequestServer requestServer = new RequestServer();
-		requestServer.setUrlSuffix(URL_CALLED);
-		requestServer.setMethod("GET");
-		requestServer.setRequestObject("");
-		task.execute(requestServer);
-	}
-
-	public static void updateDigicodeList() {
-		URL_CALLED = Constantes.URL_LIST_DIGICODE;
-		ServerAsyncTask task = new ServerAsyncTask(_instance);
-		RequestServer requestServer = new RequestServer();
-		requestServer.setMethod("GET");
-		requestServer.setUrlSuffix(URL_CALLED);
-		requestServer.setRequestObject("");
-		task.execute(requestServer);
-	}
-
-	public static void addNFCAccess(String requestObject) {
+	public static void addNFCAccess(Acces acces) {
 		URL_CALLED = Constantes.URL_ADD_NFC_BADGE;
 		ServerAsyncTask task = new ServerAsyncTask(_instance);
 		RequestServer requestServer = new RequestServer();
 		requestServer.setUrlSuffix(URL_CALLED);
 		requestServer.setMethod("POST");
-		requestServer.setRequestObject(requestObject);
+		requestServer.setRequestObject(acces.toNFCString());
 		task.execute(requestServer);
+		ApplicationValues.getInstance().listOfBadges.add(acces);
 	}
 
-	public static void addDigicode(String requestObject) {
+	public static void addDigicode(Acces acces) {
 		URL_CALLED = Constantes.URL_ADD_DIGICODE;
 		ServerAsyncTask task = new ServerAsyncTask(_instance);
 		RequestServer requestServer = new RequestServer();
 		requestServer.setUrlSuffix(URL_CALLED);
 		requestServer.setMethod("POST");
-		requestServer.setRequestObject(requestObject);
+		requestServer.setRequestObject(acces.toDigicodeString());
 		task.execute(requestServer);
+		ApplicationValues.getInstance().listOfDigicodes.add(acces);
 	}
 
 	@Override

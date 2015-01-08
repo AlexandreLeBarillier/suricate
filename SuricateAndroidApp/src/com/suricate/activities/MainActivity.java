@@ -23,6 +23,7 @@ import com.suricate.R;
 import com.suricate.adapters.NavigationDrawerItemAdapter;
 import com.suricate.fragments.AboutFragment;
 import com.suricate.fragments.BadgesListFragment;
+import com.suricate.fragments.DigicodesListFragment;
 import com.suricate.fragments.HistoryFragment;
 import com.suricate.fragments.SettingsFragment;
 
@@ -173,16 +174,21 @@ public class MainActivity extends Activity {
 			menuToInflate = R.menu.fragment_badges_list;
 			break;
 		case 1:
-			fragment = new HistoryFragment();
+			fragment = new DigicodesListFragment();
+			addClass = AddBadgeActivity.class;
+			menuToInflate = R.menu.fragment_badges_list;
 			break;
 		case 2:
-			fragment = new SettingsFragment();
+			fragment = new HistoryFragment();
 			break;
 		case 3:
+			fragment = new SettingsFragment();
+			break;
+		case 4:
 			Intent i = new Intent(getApplicationContext(), LoginActivity.class);
 			startActivity(i);
 			break;
-		case 4:
+		case 5:
 			fragment = new AboutFragment();
 			break;
 		default:
