@@ -14,7 +14,9 @@
     <string name="radio_permanent">Permanent</string>
     <string name="radio_temporary">Temporaire</string>
     <string name="permanent_acces">Durée de validité</string>
-
+    <string name="owner_acces">Propriétaire</string>
+    <string name="pin_code">Code PIN</string>
+    
     <!-- ACTIVITY NAMES -->
     <string name="title_activity_inscription">Inscription Activity</string>
     <string name="title_activity_valid_enter">Demande d\'autorisation</string>

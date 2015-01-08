@@ -22,8 +22,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/badges_listview"
-        android:text="Digicodes"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:text="Digicodes" />
 
     <ListView
         android:id="@+id/digicodes_listview"
