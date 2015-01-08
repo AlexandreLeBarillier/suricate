@@ -128,12 +128,10 @@ public class BadgesListFragment extends Fragment implements CallerServer {
 				}
 				for (int i = 0; i < jarray.size(); i++) {
 					JsonObject jsonBadge = jarray.get(i).getAsJsonObject();
-					String[] splits = jsonBadge.get("nfccode").getAsString()
-							.split(":");
 					Acces acces = new Acces(jsonBadge.get("owner")
 							.getAsString(), Boolean.TRUE, jsonBadge
 							.get("validity").getAsString().equals("1"),
-							new Date(), splits[0]);
+							new Date(),jsonBadge.get("nfccode").getAsString());
 					ApplicationValues.getInstance().listOfBadges.add(acces);
 				}
 				AccesAdapter adapterdDigicode = new AccesAdapter(

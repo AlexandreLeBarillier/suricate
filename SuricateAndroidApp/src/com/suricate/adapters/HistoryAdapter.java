@@ -1,5 +1,6 @@
 package com.suricate.adapters;
 
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
@@ -46,12 +47,20 @@ public class HistoryAdapter extends ArrayAdapter<Acces> {
 		} else {
 			viewAcces = (AccesView) convertView.getTag();
 		}
-		
+
 		// Populate the data into the template view using the data object
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		viewAcces.name.setText(item.getOwner());
-		viewAcces.last_usage.setText("Utilisé le : "+sdf.format(item.getLastUsage()));
+		String owner;
+		try {
+			owner = new String(item.getOwner().getBytes("ISO-8859-1"), "UTF-8");
 
+			viewAcces.name.setText(owner);
+			viewAcces.last_usage.setText("Utilisé le : "
+					+ sdf.format(item.getLastUsage()));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// Return the completed view to render on screen
 		return convertView;
 	}
