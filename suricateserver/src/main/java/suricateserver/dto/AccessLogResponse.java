@@ -1,30 +1,20 @@
 package suricateserver.dto;
 
-import java.util.Date;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class AccessLogResponse {
 
-	private Date date;
-	
-	private String content;
-	
-	public Date getDate() {
-		return date;
+	private List<AccessLogDTO> accesslogs;
+
+	public List<AccessLogDTO> getAccesslogs() {
+		return accesslogs;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
+	public void setAccesslogs(List<AccessLogDTO> accesslogs) {
+		this.accesslogs = accesslogs;
 	}
 
 }

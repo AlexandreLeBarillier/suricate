@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import suricateserver.dto.AccessLogDTO;
 import suricateserver.dto.AccessLogResponse;
 
 public class AccessLogDAO {
@@ -32,14 +35,16 @@ public class AccessLogDAO {
 			Statement statement = connexion.createStatement();
 			String req = "select * from accesslog";
 			ResultSet set = statement.executeQuery(req);
+			List<AccessLogDTO> accesslogs = new ArrayList<AccessLogDTO>();
 
 			while (set.next()) {
+				AccessLogDTO a = new AccessLogDTO();
 				java.util.Date utilDate = new java.util.Date(set.getDate("create_date").getTime());
-				response.setDate(utilDate);
-				response.setContent(set.getString("content"));
-				break;
-
+				a.setDate(utilDate);
+				a.setContent(set.getString("content"));
+				accesslogs.add(a);
 			}
+			response.setAccesslogs(accesslogs);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
