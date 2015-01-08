@@ -47,7 +47,7 @@ public class NFCAccess {
 		request.setNfccode(code);
 		try {
 			result = NFCAccessDAO.verify(request);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return Response.status(500).entity("internal error").build();
 		}
@@ -64,7 +64,7 @@ public class NFCAccess {
 	public Response getList() {
 		NFCGetListResponse result = new NFCGetListResponse();
 		try {
-			NFCAccessDAO.getList();
+			result = NFCAccessDAO.getList();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(500).entity("internal error").build();

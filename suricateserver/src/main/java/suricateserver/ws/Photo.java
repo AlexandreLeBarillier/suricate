@@ -1,5 +1,7 @@
 package suricateserver.ws;
 
+import java.io.InputStream;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -14,8 +16,8 @@ public class Photo {
 
 	@POST
 	@Path("/verifyphoto")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response verifyphoto(PhotoRequest request) {
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	public Response verifyphoto(InputStream request) {
 		try {
 			String path = PhotoService.savePhoto(request);
 			PhotoService.performMatching(path);

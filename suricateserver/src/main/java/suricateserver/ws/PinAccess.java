@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 
 import suricateserver.dao.PinAccessDAO;
 import suricateserver.dto.PinCreateAccessRequest;
+import suricateserver.dto.PinGetListResponse;
 import suricateserver.dto.PinVerifyAccessRequest;
 import suricateserver.dto.PinVerifyAccessResponse;
 
@@ -46,6 +47,24 @@ public class PinAccess {
 		request.setPincode(code);
 		try {
 			result =PinAccessDAO.verify(request);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Response.status(500).entity("internal error").build();
+		}
+		return Response.status(200).entity(result).build();
+	}
+	
+	/**
+	 * @return autorisation d'accès
+	 */
+	@GET
+	@Path("/getlist")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getList() {
+		PinGetListResponse result = new PinGetListResponse();
+		try {
+			result = PinAccessDAO.getList();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(500).entity("internal error").build();

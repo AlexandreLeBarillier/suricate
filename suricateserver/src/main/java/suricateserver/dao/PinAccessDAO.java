@@ -6,10 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import suricateserver.dto.PinCreateAccessRequest;
+import suricateserver.dto.PinGetListResponse;
 import suricateserver.dto.PinVerifyAccessRequest;
 import suricateserver.dto.PinVerifyAccessResponse;
+import suricateserver.dto.Pincode;
 
 public class PinAccessDAO {
 	
@@ -87,7 +92,7 @@ public class PinAccessDAO {
 		}
 	}
 	
-	public static PinVerifyAccessResponse verify(PinVerifyAccessRequest request) throws SQLException {
+	public static PinVerifyAccessResponse verify(PinVerifyAccessRequest request) throws Exception {
 
 		PinVerifyAccessResponse response = new PinVerifyAccessResponse();
 
@@ -120,6 +125,24 @@ public class PinAccessDAO {
 					response.setResult(false);
 					response.setMessage("Date de validité dépassée");
 				}
+				/*
+				 * création du log d'accès
+				 */
+				java.util.Date utilDate = new java.util.Date();
+			    java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+				String queryLog = "INSERT INTO accesslog (create_date, content) VALUES (?, ?)";
+
+				PreparedStatement preparedStatementLog = connexion.prepareStatement(queryLog);
+				preparedStatementLog.setDate(1, sqlDate);
+				preparedStatementLog.setString(2,  "digicode " + request.getPincode() + " - " + response.getMessage());
+				
+				int statusLog = preparedStatementLog.executeUpdate();
+				
+				if (statusLog == 0) {
+					throw new Exception("Insertion Log impossible");
+				}
+
+				preparedStatementLog.close();
 			} else {
 				response.setResult(false);
 				response.setMessage("Digicode invalide");
@@ -141,47 +164,65 @@ public class PinAccessDAO {
 		return response;
 	}
 	
-//	public static PinGetListResponse getList() throws SQLException {
-//
-//		PinGetListResponse response = new PinGetListResponse();
-//
-//		Connection connexion = null;
-//
-//		try {
-//
-//			String dbClass = "com.mysql.jdbc.Driver";
-//			Class.forName(dbClass);
-//			connexion = DriverManager.getConnection(DAOUtils.DB_URL, DAOUtils.DB_USER,
-//					DAOUtils.DB_PWD);
-//
-//			String query = "select pincode from pinaccess where validity like \'%0%\' or validity like \'%1%\'";
-//			PreparedStatement preparedStatement = connexion.prepareStatement(query);
-//			ResultSet set = preparedStatement.executeQuery();
-//
-//			HashMap<String, String> digicodes = new HashMap<String, String>();
-//			String pincode = "";
-//			String[] tab = new String[2];
-//			while(set.next()) {
-//				pincode = set.getString(1);
-//				tab = pincode.split(":");
-//				digicodes.put(tab[0], tab[1]);
-//			}
-//			response.setBadges(digicodes);
-//
-//		} catch (ClassNotFoundException e) {
-//			e.printStackTrace();
-//		} finally {
-//			if (connexion != null)
-//				try {
-//					connexion.close();
-//				} catch (SQLException ignore) {
-//					/*
-//					 * nothing to do...
-//					 */
-//				}
-//		}
-//
-//		return response;
-//	}
+	public static PinGetListResponse getList() throws SQLException {
+		PinGetListResponse response = new PinGetListResponse();
+
+		Connection connexion = null;
+
+		try {
+
+			String dbClass = "com.mysql.jdbc.Driver";
+			Class.forName(dbClass);
+			connexion = DriverManager.getConnection(DAOUtils.DB_URL, DAOUtils.DB_USER,
+					DAOUtils.DB_PWD);
+			
+			/*
+			 * création du guest
+			 */
+			String queryGuest = "select * from guest";
+
+			PreparedStatement preparedStatementGuest = connexion.prepareStatement(queryGuest);
+			
+			ResultSet guests = preparedStatementGuest.executeQuery();
+			
+			HashMap<Integer, String> guestList = new HashMap<Integer, String>();
+			
+			while(guests.next()) {
+				guestList.put(new Integer(guests.getInt("idguest")), guests.getString("name"));
+			}
+
+			preparedStatementGuest.close();
+
+			String query = "select pincode, validity, validity_rule, idguest from pinaccess";
+			PreparedStatement preparedStatement = connexion.prepareStatement(query);
+			ResultSet set = preparedStatement.executeQuery();
+			List<Pincode> pincodes = new ArrayList<Pincode>();
+			while(set.next()) {
+				if(!"2".equals(set.getString(2).trim())) {
+					Pincode b = new Pincode();
+					b.setPincode(set.getString("pincode"));
+					b.setValidity(set.getString("validity"));
+					b.setValidity_rule(set.getString("validity_rule"));
+					b.setOwner(guestList.get(new Integer(set.getInt("idguest"))));
+					pincodes.add(b);
+				}
+			}
+			response.setPincodes(pincodes);
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			if (connexion != null)
+				try {
+					connexion.close();
+				} catch (SQLException ignore) {
+					/*
+					 * nothing to do...
+					 */
+				}
+		}
+
+		return response;
+	}
 
 }

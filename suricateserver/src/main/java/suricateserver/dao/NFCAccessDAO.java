@@ -6,8 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import suricateserver.dto.Badge;
 import suricateserver.dto.NFCCreateAccessRequest;
 import suricateserver.dto.NFCGetListResponse;
 import suricateserver.dto.NFCVerifyAccessRequest;
@@ -89,7 +92,7 @@ public class NFCAccessDAO {
 		}
 	}
 	
-	public static NFCVerifyAccessResponse verify(NFCVerifyAccessRequest request) throws SQLException {
+	public static NFCVerifyAccessResponse verify(NFCVerifyAccessRequest request) throws Exception {
 
 		NFCVerifyAccessResponse response = new NFCVerifyAccessResponse();
 
@@ -122,6 +125,24 @@ public class NFCAccessDAO {
 					response.setResult(false);
 					response.setMessage("Date de validité dépassée");
 				}
+				/*
+				 * création du log d'accès
+				 */
+				java.util.Date utilDate = new java.util.Date();
+			    java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+				String queryLog = "INSERT INTO accesslog (create_date, content) VALUES (?, ?)";
+
+				PreparedStatement preparedStatementLog = connexion.prepareStatement(queryLog);
+				preparedStatementLog.setDate(1, sqlDate);
+				preparedStatementLog.setString(2,  "badge " + request.getNfccode().split(":")[0] + " - " + response.getMessage());
+				
+				int statusLog = preparedStatementLog.executeUpdate();
+				
+				if (statusLog == 0) {
+					throw new Exception("Insertion Log impossible");
+				}
+
+				preparedStatementLog.close();
 			} else {
 				response.setResult(false);
 				response.setMessage("Badge NFC invalide");
@@ -155,18 +176,39 @@ public class NFCAccessDAO {
 			Class.forName(dbClass);
 			connexion = DriverManager.getConnection(DAOUtils.DB_URL, DAOUtils.DB_USER,
 					DAOUtils.DB_PWD);
+			
+			/*
+			 * création du guest
+			 */
+			String queryGuest = "select * from guest";
 
-			String query = "select nfccode from nfcaccess where validity like \'%0%\' or validity like \'%1%\'";
+			PreparedStatement preparedStatementGuest = connexion.prepareStatement(queryGuest);
+			
+			ResultSet guests = preparedStatementGuest.executeQuery();
+			
+			HashMap<Integer, String> guestList = new HashMap<Integer, String>();
+			
+			while(guests.next()) {
+				guestList.put(new Integer(guests.getInt("idguest")), guests.getString("name"));
+			}
+
+			preparedStatementGuest.close();
+
+			String query = "select nfccode, validity, validity_rule, idguest from nfcaccess";
 			PreparedStatement preparedStatement = connexion.prepareStatement(query);
 			ResultSet set = preparedStatement.executeQuery();
-
-			HashMap<String, String> badges = new HashMap<String, String>();
+			List<Badge> badges = new ArrayList<Badge>();
 			String nfccode = "";
-			String[] tab = new String[2];
 			while(set.next()) {
-				nfccode = set.getString(1);
-				tab = nfccode.split(":");
-				badges.put(tab[0], tab[1]);
+				if(!"2".equals(set.getString(2).trim())) {
+					Badge b = new Badge();
+					nfccode = set.getString(1);
+					b.setNfccode(nfccode);
+					b.setValidity(set.getString("validity"));
+					b.setValidity_rule(set.getString("validity_rule"));
+					b.setOwner(guestList.get(new Integer(set.getInt("idguest"))));
+					badges.add(b);
+				}
 			}
 			response.setBadges(badges);
 
