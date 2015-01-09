@@ -2,13 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsFragment" >
+    tools:context=".SettingsFragment" 
+    android:padding="20dp">
 
     <TextView
+        android:id="@+id/ws_url"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ws_url" />
+
+    <Switch
+        android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:layout_toRightOf="@+id/ws_url"
+        android:textOn="PROD"
+        android:textOff="DEV" />
 
 </RelativeLayout>

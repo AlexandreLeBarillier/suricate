@@ -55,7 +55,7 @@ public class HistoryAdapter extends ArrayAdapter<Acces> {
 			owner = new String(item.getOwner().getBytes("ISO-8859-1"), "UTF-8");
 
 			viewAcces.name.setText(owner);
-			viewAcces.last_usage.setText("Utilisé le : "
+			viewAcces.last_usage.setText("UtilisÃ© le : "
 					+ sdf.format(item.getLastUsage()));
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block

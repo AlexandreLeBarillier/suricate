@@ -5,6 +5,9 @@ import java.util.Arrays;
 import android.nfc.cardemulation.HostApduService;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.suricate.utils.ApplicationValues;
 
 /**
  * Application protocol that emulates a Suricate Badge
@@ -12,11 +15,11 @@ import android.util.Log;
 public class SuricateService extends HostApduService {
     private static final String TAG = "SuricateService";
 
-    private static final String DUMMY_BADGE = "ABCDE12345";
+    private static final String DUMMY_BADGE = "#"+ApplicationValues.getInstance()._selectedBadge.getCode()+"#";
 
     private static final String SURICATE_SERVICE_AID = "F00004121992";
 
-    private static final byte[] OK_SW = HexStringToByteArray("9000");
+    private static final byte[] OK_SW = HexStringToByteArray("");
     private static final byte[] UNKNOWN_SW = HexStringToByteArray("6000");
     private static final byte[] SELECT_APDU = HexStringToByteArray("00A40400"
             + "06" + SURICATE_SERVICE_AID);

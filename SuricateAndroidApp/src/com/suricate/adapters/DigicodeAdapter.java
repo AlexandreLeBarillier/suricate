@@ -50,7 +50,7 @@ public class DigicodeAdapter extends ArrayAdapter<Acces> {
 		}
 		// Populate the data into the template view using the data object
 		viewAcces.name.setText("Digicode " + item.getCode() + " - " + item.getOwner());
-		viewAcces.last_usage.setText("Utilisé le : 07/01/2015 14:25");
+		viewAcces.last_usage.setText("UtilisÃ© le : 07/01/2015 14:25");
 		viewAcces.color.setBackgroundColor(Color.parseColor(colors.get(position
 				% colors.size())));
 

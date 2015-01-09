@@ -16,6 +16,7 @@
     <string name="permanent_acces">Durée de validité</string>
     <string name="owner_acces">Propriétaire</string>
     <string name="pin_code">Code PIN</string>
+    <string name="ws_url">Environnement des webservices</string>
     
     <string name="writetag">Créer badge</string>
     <string name="device_not_nfc">This application or device does not support NFC.</string>

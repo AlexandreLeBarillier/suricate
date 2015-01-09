@@ -13,6 +13,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.suricate.utils.ApplicationValues;
 import com.suricate.utils.Constantes;
 
 public class ServerAsyncTask extends AsyncTask<RequestServer, Void, String> {
@@ -32,14 +33,14 @@ public class ServerAsyncTask extends AsyncTask<RequestServer, Void, String> {
 
 			if(arg0[0].getMethod().equals("GET")){
 				// url with the post data
-				HttpGet httpGet = new HttpGet(Constantes.WEBSERVICES_URL+ arg0[0].getUrlSuffix());
+				HttpGet httpGet = new HttpGet(ApplicationValues.getInstance().WS_URL+ arg0[0].getUrlSuffix());
 			
 				// Handles what is returned from the page
 				ResponseHandler responseHandler = new BasicResponseHandler();
 				return httpclient.execute(httpGet, responseHandler);
 			}else{
 				// url with the post data
-				HttpPost httpost = new HttpPost(Constantes.WEBSERVICES_URL+ arg0[0].getUrlSuffix());
+				HttpPost httpost = new HttpPost(ApplicationValues.getInstance().WS_URL+ arg0[0].getUrlSuffix());
 				// passes the results to a string builder/entity
 
 				// sets the post request as the resulting string
